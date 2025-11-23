@@ -26,11 +26,13 @@ class BooksController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
     @book = Book.find(params[:id])
     @books = Book.all
   end
 
   def update
+    @user = User.find(params[:id])
     @book = Book.find(params[:id])
     if @book.update(book_params)
       flash[:notice] = "Book was successfully updated"
