@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def show
-    @book = Book.find(params[:id])
     @user = User.find(params[:id])
     @books = @user.books
   end
